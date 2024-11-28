@@ -16,50 +16,80 @@
             text-align: center;
         }
 
+        /* Modal */
         .modal {
-            -bs-modal-zindex: 1055;
-            --bs-modal-width: 500px;
-            --bs-modal-padding: 1rem;
-            --bs-modal-margin: 0.5rem;
-            --bs-modal-color: ;
-            --bs-modal-bg: var(--bs-body-bg);
-            --bs-modal-border-color: var(--bs-border-color-translucent);
-            --bs-modal-border-width: var(--bs-border-width);
-            --bs-modal-border-radius: var(--bs-border-radius-lg);
-            --bs-modal-box-shadow: var(--bs-box-shadow-sm);
-            --bs-modal-inner-border-radius: calc(var(--bs-border-radius-lg) -(var(--bs-border-width)));
-            --bs-modal-header-padding-x: 1rem;
-            --bs-modal-header-padding-y: 1rem;
-            --bs-modal-header-padding: 1rem 1rem;
-            --bs-modal-header-border-color: var(--bs-border-color);
-            --bs-modal-header-border-width: var(--bs-border-width);
-            --bs-modal-title-line-height: 1.5;
-            --bs-modal-footer-gap: 0.5rem;
-            --bs-modal-footer-bg: ;
-            --bs-modal-footer-border-color: var(--bs-border-color);
-            --bs-modal-footer-border-width: var(--bs-border-width);
             position: fixed;
             top: 0;
             left: 0;
-            z-index: var(--bs-modal-zindex);
+            z-index: 1055;
+            /* Bootstrap modal z-index */
             display: none;
             width: 100%;
             height: 100%;
             overflow-x: hidden;
             overflow-y: auto;
             outline: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Dimmed background */
         }
 
         .modal-dialog {
             position: relative;
             width: auto;
-            margin: var(--bs-modal-margin);
-            pointer-events: none;
-            max-width: var(--bs-modal-width);
-            margin-right: auto;
-            margin-left: auto;
+            margin: 1.75rem auto;
+            /* Default Bootstrap margin for modal */
+            max-width: 500px;
+            /* You can adjust this width */
+        }
+
+        .modal-content {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            color: #212529;
+            background-color: #fff;
+            border-radius: 0.3rem;
+            /* Default Bootstrap border-radius */
+            border: 1px solid rgba(0, 0, 0, 0.125);
+            /* Default Bootstrap border */
+            outline: 0;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+            background-color: #f7f7f9;
+            border-top-left-radius: calc(0.3rem - 1px);
+            border-top-right-radius: calc(0.3rem - 1px);
+        }
+
+        .modal-body {
+            padding: 1rem;
+        }
+
+        .modal-footer {
+            display: flex;
+            justify-content: flex-end;
+            padding: 1rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.125);
+        }
+
+        .modal-close-button {
+            border: none;
+            background: transparent;
+            font-size: 1.25rem;
+            color: #000;
+        }
+
+        .modal-close-button:hover {
+            color: #5a6268;
         }
     </style>
+
 
     <div class="container mx-auto px-4 my-5">
         <!-- Carousel -->
@@ -142,7 +172,7 @@
                                     </div>
 
                                     <!-- Modal -->
-                                    <div class="modal fade" id="exampleModal{{ $d->id }}" tabindex="-1"
+                                    <div class="modal  fade" id="exampleModal{{ $d->id }}" tabindex="-1"
                                         aria-labelledby="exampleModalLabel{{ $d->id }}" aria-hidden="true">
                                         <div class="modal-dialog modal-dialog-centered">
                                             <div class="modal-content">
