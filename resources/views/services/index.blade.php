@@ -153,19 +153,22 @@
                                             Rp{{ number_format($d->price, 2, ',', '.') }}</p>
 
                                         @if (Auth::check() && Auth::user()->role == 1)
-                                            <button type="button" class="btn btn-sm btn-primary mt-2"
+                                            <button type="button"
+                                                class="bg-blue-500 p-1 text-gray-100 rounded-md hover:bg-blue-600"
                                                 data-bs-toggle="modal"
                                                 data-bs-target="#exampleModal{{ $d->id }}">Read More</button>
                                             <a href="{{ route('services.edit', $d->id) }}"
-                                                class="btn btn-sm btn-warning mt-2 no-underline">Edit</a>
+                                                class="bg-yellow-500 p-1.5 text-gray-100 rounded-md hover:bg-yellow-600">Edit</a>
                                             <form action="{{ route('services.destroy', $d->id) }}" method="POST"
                                                 class="inline mt-2">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit" class="btn btn-sm btn-danger mt-2">Delete</button>
+                                                <button type="submit"
+                                                    class="bg-red-500 p-1 text-gray-100 rounded-md hover:bg-red-600">Delete</button>
                                             </form>
                                         @else
-                                            <button type="button" class="btn btn-sm btn-primary mt-2"
+                                            <button type="button"
+                                                class="bg-blue-500 p-1 text-gray-100 rounded-md hover:bg-blue-600"
                                                 data-bs-toggle="modal"
                                                 data-bs-target="#exampleModal{{ $d->id }}">Read More</button>
                                         @endif
@@ -188,7 +191,8 @@
                                                         Rp{{ number_format($d->price, 2, ',', '.') }}</p>
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <button type="button" class="btn btn-sm btn-secondary"
+                                                    <button type="button"
+                                                        class="bg-gray-500 p-1 rounded-md text-gray-100 hover:bg-gray-600"
                                                         data-bs-dismiss="modal">Close</button>
                                                 </div>
                                             </div>
