@@ -1,0 +1,7 @@
+.text-blue {
+    color: rgb(24, 160, 251);
+}
+
+a.text-blue:hover {
+ text-decoration: underline;
+}
